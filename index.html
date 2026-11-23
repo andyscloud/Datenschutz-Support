@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Apps von Andreas Neumann</title>
+    <style>
+        :root {
+            --bg: #f5f5fa;
+            --card: #ffffff;
+            --text: #1c1c1e;
+            --muted: #6b6b75;
+            --accent: #5b5bf0;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0f1030;
+                --card: #1b1c45;
+                --text: #f2f2f7;
+                --muted: #a9a9c0;
+                --accent: #8c8cff;
+            }
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            -webkit-text-size-adjust: 100%;
+        }
+        header {
+            background: linear-gradient(135deg, #5b8cff, #6a3de8);
+            color: #fff;
+            padding: 40px 20px 32px;
+            text-align: center;
+        }
+        header h1 { margin: 0; font-size: 28px; }
+        header p { margin: 6px 0 0; opacity: 0.85; }
+        header p:empty { display: none; }
+        nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 15px;
+            padding: 6px 14px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.18);
+        }
+        nav a[aria-current="page"] { background: rgba(255, 255, 255, 0.38); }
+        main { max-width: 760px; margin: 0 auto; padding: 24px 20px 48px; }
+        section { background: var(--card); border-radius: 18px; padding: 4px 22px 18px; margin-bottom: 18px; }
+        h2 { font-size: 22px; margin: 22px 0 6px; }
+        h3 { font-size: 18px; margin: 20px 0 4px; }
+        p, ul { margin: 8px 0; }
+        ul { padding-left: 22px; }
+        li { margin: 4px 0; }
+        a { color: var(--accent); }
+        .lead { font-size: 18px; }
+        .muted { color: var(--muted); font-size: 15px; }
+        .faq h3 { margin-top: 18px; }
+        .faq p { margin-top: 2px; }
+        footer { text-align: center; color: var(--muted); font-size: 14px; padding: 0 20px 40px; }
+        footer a { color: var(--muted); }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Apps von Andreas Neumann</h1>
+        <nav>
+            <a href="support.html">Support</a>
+            <a href="datenschutz.html">Datenschutz</a>
+        </nav>
+    </header>
+</body>
+</html>
