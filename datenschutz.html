@@ -1,82 +1,155 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+    <meta name="theme-color" content="#05061a">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Datenschutzerklärung</title>
     <style>
-        :root {
-            --bg: #f5f5fa;
-            --card: #ffffff;
-            --text: #1c1c1e;
-            --muted: #6b6b75;
-            --accent: #5b5bf0;
-        }
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg: #0f1030;
-                --card: #1b1c45;
-                --text: #f2f2f7;
-                --muted: #a9a9c0;
-                --accent: #8c8cff;
-            }
-        }
         * { box-sizing: border-box; }
+
         body {
             margin: 0;
-            background: var(--bg);
-            color: var(--text);
+            min-height: 100svh;
+            background: #05061a;
+            color: rgba(255, 255, 255, 0.88);
             font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
             -webkit-text-size-adjust: 100%;
         }
+
+        /* Aurora: blurred, slowly drifting color veils (same as the start page) */
+        .aurora {
+            position: fixed;
+            inset: -25%;
+            filter: blur(70px) saturate(130%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .veil {
+            position: absolute;
+            border-radius: 50%;
+            mix-blend-mode: screen;
+            opacity: 0.9;
+            animation: drift 22s ease-in-out infinite alternate;
+        }
+
+        .veil.green  { width: 70vmax; height: 34vmax; left: 5%;  top: 18%; background: radial-gradient(closest-side, #2ef2b5, transparent); transform: rotate(-18deg); }
+        .veil.cyan   { width: 60vmax; height: 30vmax; left: 35%; top: 8%;  background: radial-gradient(closest-side, #3fb8ff, transparent); animation-duration: 26s; animation-delay: -6s; }
+        .veil.violet { width: 75vmax; height: 40vmax; left: 20%; top: 45%; background: radial-gradient(closest-side, #7b4dff, transparent); animation-duration: 30s; animation-delay: -12s; }
+        .veil.pink   { width: 45vmax; height: 26vmax; left: 55%; top: 55%; background: radial-gradient(closest-side, #ff5ca8, transparent); opacity: 0.45; animation-duration: 34s; animation-delay: -3s; }
+
+        @keyframes drift {
+            0%   { transform: translate(0, 0) rotate(-12deg) scale(1); }
+            50%  { transform: translate(6vmax, -4vmax) rotate(4deg) scale(1.12); }
+            100% { transform: translate(-5vmax, 3vmax) rotate(-20deg) scale(0.95); }
+        }
+
+        .stars {
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+            opacity: 0.5;
+            pointer-events: none;
+            background-image:
+                radial-gradient(1px 1px at 12% 22%, #fff, transparent),
+                radial-gradient(1px 1px at 78% 14%, #fff, transparent),
+                radial-gradient(1.5px 1.5px at 64% 72%, #fff, transparent),
+                radial-gradient(1px 1px at 28% 84%, #fff, transparent),
+                radial-gradient(1px 1px at 90% 58%, #fff, transparent),
+                radial-gradient(1.5px 1.5px at 42% 9%, #fff, transparent),
+                radial-gradient(1px 1px at 6% 62%, #fff, transparent),
+                radial-gradient(1px 1px at 52% 44%, #fff, transparent);
+        }
+
+        header, main, footer {
+            position: relative;
+            z-index: 2;
+        }
+
         header {
-            background: linear-gradient(135deg, #5b8cff, #6a3de8);
-            color: #fff;
-            padding: 40px 20px 32px;
             text-align: center;
+            padding: 64px 20px 8px;
         }
-        header h1 { margin: 0; font-size: 28px; }
-        header p { margin: 6px 0 0; opacity: 0.85; }
+
+        header h1 {
+            margin: 0;
+            font-size: clamp(30px, 7vw, 44px);
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            line-height: 1.15;
+            background: linear-gradient(180deg, #ffffff 30%, #c9c2ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        header p { margin: 10px 0 0; color: rgba(255, 255, 255, 0.6); }
         header p:empty { display: none; }
-        nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 15px;
-            padding: 6px 14px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.18);
+
+        main {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 28px 20px 32px;
         }
-        nav a[aria-current="page"] { background: rgba(255, 255, 255, 0.38); }
-        main { max-width: 760px; margin: 0 auto; padding: 24px 20px 48px; }
-        section { background: var(--card); border-radius: 18px; padding: 4px 22px 18px; margin-bottom: 18px; }
-        h2 { font-size: 22px; margin: 22px 0 6px; }
+
+        /* Glass cards */
+        section {
+            padding: 6px 24px 20px;
+            margin-bottom: 18px;
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            -webkit-backdrop-filter: blur(24px) saturate(150%);
+            backdrop-filter: blur(24px) saturate(150%);
+        }
+
+        h2, h3, strong { color: #fff; }
+        h2 { font-size: 22px; margin: 22px 0 6px; letter-spacing: -0.01em; }
         h3 { font-size: 18px; margin: 20px 0 4px; }
+        main > h2 { margin: 34px 4px 14px; }
         p, ul { margin: 8px 0; }
         ul { padding-left: 22px; }
         li { margin: 4px 0; }
-        a { color: var(--accent); }
-        .lead { font-size: 18px; }
-        .muted { color: var(--muted); font-size: 15px; }
+
+        a { color: #c9c2ff; text-underline-offset: 3px; }
+        a:hover { color: #fff; }
+
+        .lead { font-size: 18px; color: #fff; }
+        .muted { color: rgba(255, 255, 255, 0.55); font-size: 15px; }
         .faq h3 { margin-top: 18px; }
         .faq p { margin-top: 2px; }
-        footer { text-align: center; color: var(--muted); font-size: 14px; padding: 0 20px 40px; }
-        footer a { color: var(--muted); }
+
+        footer {
+            text-align: center;
+            font-size: 14px;
+            padding: 0 20px 48px;
+        }
+
+        footer a { color: rgba(255, 255, 255, 0.55); }
+
+        @media (prefers-reduced-motion: reduce) {
+            .veil { animation: none; }
+        }
     </style>
 </head>
 <body>
+    <div class="aurora" aria-hidden="true">
+        <div class="veil green"></div>
+        <div class="veil cyan"></div>
+        <div class="veil violet"></div>
+        <div class="veil pink"></div>
+    </div>
+    <div class="stars" aria-hidden="true"></div>
     <header>
         <h1>Datenschutzerklärung</h1>
-        <p></p>
-        <nav>
-            <a href="support.html">Support</a>
-            <a href="datenschutz.html" aria-current="page">Datenschutz</a>
-        </nav>
+        <p>Stand: November 2026</p>
     </header>
 
     <main>
         <section>
-            <p class="muted">Stand: November 2026</p>
             <p class="lead">Meine Apps erfassen keine Daten über dich. Es gibt kein Benutzerkonto, keine Werbung, kein Tracking und keine Analyse-Dienste. Was du in einer App eingibst, bleibt auf deinem Gerät – außer du gibst es selbst weiter, z.&nbsp;B. durch einen Export. Ich habe keinen Zugriff auf deine Daten.</p>
         </section>
 
@@ -114,27 +187,6 @@
             <p>Bei Fragen zum Datenschutz: <a href="mailto:mail@andyscloud.de">mail@andyscloud.de</a></p>
         </section>
 
-        <h2>Hinweise zu den einzelnen Apps</h2>
-
-        <section id="easycardsafe">
-            <h2>EasyCardSafe</h2>
-            <ul>
-                <li>Speichert deine Karten (Name, Kategorie, Farbe, Notiz) und Fotos der Karten – ausschließlich auf deinem iPhone, verschlüsselt mit AES-256.</li>
-                <li>Der Schlüssel liegt im Schlüsselbund und wird, falls du den iCloud-Schlüsselbund nutzt, Ende-zu-Ende-verschlüsselt mit deinen Apple-Geräten abgeglichen.</li>
-                <li>Berechtigungen: Kamera (Karten fotografieren), Fotos (ausgewählte Bilder übernehmen), Face&nbsp;ID (App entsperren).</li>
-                <li>Backups entstehen nur, wenn du sie selbst exportierst. Sie sind mit deinem Passwort verschlüsselt und liegen dort, wo du sie speicherst.</li>
-            </ul>
-        </section>
-
-        <!-- Vorlage für die nächste App: Abschnitt kopieren, id und Texte anpassen.
-        <section id="appname">
-            <h2>[Name der App]</h2>
-            <ul>
-                <li>Speichert: [z. B. „nichts“ oder „deine Notizen, nur auf dem Gerät“]</li>
-                <li>Berechtigungen: [z. B. „keine“ oder „Kamera – um …“]</li>
-            </ul>
-        </section>
-        -->
     </main>
 
     <footer>
