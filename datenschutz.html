@@ -150,24 +150,49 @@
 
     <main>
         <section>
-            <p class="lead">Meine Apps erfassen keine Daten über dich. Es gibt kein Benutzerkonto, keine Werbung, kein Tracking und keine Analyse-Dienste. Was du in einer App eingibst, bleibt auf deinem Gerät – außer du gibst es selbst weiter, z.&nbsp;B. durch einen Export. Ich habe keinen Zugriff auf deine Daten.</p>
+            <p class="lead">Meine Apps erfassen keine Daten über dich. Es gibt kein Benutzerkonto, keine Werbung, kein Tracking und keine Analyse-Dienste. Ich betreibe keine eigenen Server und habe keinen Zugriff auf deine Daten. Was du in einer App eingibst oder was sie auf deinem Gerät liest, bleibt auf deinem Gerät – außer eine App ruft ausdrücklich Daten bei einem Online-Dienst ab (siehe „Online-Dienste“) oder du gibst sie selbst weiter, z.&nbsp;B. durch einen Export.</p>
         </section>
 
-        <section>
-            <h2>Verantwortlich</h2>
-            <p>
-                Andreas Neumann<br>
-                E-Mail: <a href="mailto:mail@andyscloud.de">mail@andyscloud.de</a>
-            </p>
-        </section>
-
+      
         <section>
             <h2>Berechtigungen</h2>
-            <p>Manche Apps fragen nach Berechtigungen, z.&nbsp;B. für Kamera, Fotos oder Face&nbsp;ID. Diese werden nur für die jeweils beschriebene Funktion verwendet. Du kannst sie jederzeit in den iOS-Einstellungen widerrufen.</p>
+            <p>Manche Apps fragen nach Berechtigungen. Diese werden nur für die jeweils beschriebene Funktion verwendet. Du kannst sie jederzeit in den iOS-Einstellungen widerrufen.</p>
             <ul>
                 <li><strong>Fotos:</strong> Die App erhält nur die Fotos, die du selbst auswählst.</li>
                 <li><strong>Face&nbsp;ID / Touch&nbsp;ID:</strong> Die Prüfung übernimmt iOS. Die App erfährt nur, ob sie erfolgreich war. Biometrische Daten erhält die App nie.</li>
+                <li><strong>Standort:</strong> Wenn eine App deinen Standort braucht (z.&nbsp;B. für das Wetter), fragt sie ihn nur ab, während du sie benutzt.</li>
+                <li><strong>Health, Kalender und Erinnerungen:</strong> siehe die folgenden Abschnitte.</li>
             </ul>
+        </section>
+
+        <section>
+            <h2>Apple Health</h2>
+            <p>Apps, die Daten aus Apple Health nutzen (z.&nbsp;B. Schlaf, Schritte oder Herzfrequenz), lesen nur die Kategorien, die du in der Health-Abfrage freigibst. Die Daten werden auf deinem Gerät ausgewertet und nur in der App angezeigt.</p>
+            <p>Ich verwende Health-Daten nicht für Werbung, Marketing oder Data-Mining und gebe sie nicht an Datenhändler oder andere Dritte weiter. Die einzige Ausnahme sind Funktionen, die du ausdrücklich selbst einschaltest (siehe „Eigene Server und KI“).</p>
+            <p>Du kannst die Freigabe jederzeit ändern unter Einstellungen → Apps → Health → Datenzugriff &amp; Geräte. Angezeigte Gesundheitsdaten sind keine medizinischen Aussagen oder Diagnosen und ersetzen keine ärztliche Beratung.</p>
+        </section>
+
+        <section>
+            <h2>Kalender und Erinnerungen</h2>
+            <p>Apps, die Termine oder Erinnerungen anzeigen, lesen sie nur nach deiner Erlaubnis und nur, um sie in der App darzustellen. Sie werden weder gespeichert noch an andere übertragen.</p>
+        </section>
+
+        <section>
+            <h2>Online-Dienste</h2>
+            <p>Manche Apps laden Inhalte von Online-Diensten, z.&nbsp;B. Wetter, Nachrichten oder Radiosender. Dabei sieht der jeweilige Anbieter technisch notwendige Verbindungsdaten wie deine IP-Adresse – wie bei jedem Aufruf einer Webseite. Braucht eine Funktion deinen Standort (z.&nbsp;B. das Wetter), werden dessen Koordinaten an den jeweiligen Dienst gesendet.</p>
+            <p>Welche Dienste eine App nutzt, steht in der App-Beschreibung im App Store und in der App selbst (z.&nbsp;B. unter „Datenquellen“ in den Einstellungen). Für diese Anbieter gilt deren eigene Datenschutzerklärung. Ich erhalte davon keine Daten.</p>
+        </section>
+
+        <section>
+            <h2>Eigene Server und KI</h2>
+            <p>Einige Funktionen kannst du freiwillig einschalten, bei denen Daten an einen Server gesendet werden, den du selbst betreibst (z.&nbsp;B. dein Home Assistant). Das passiert nur, wenn du die Funktion einschaltest und die Adresse selbst einträgst. Gibt dein Server die Daten an einen KI-Anbieter weiter, gilt dessen Datenschutz. Ich erhalte davon nichts.</p>
+            <p>Funktionen mit Apple Intelligence laufen direkt auf deinem Gerät. Die Daten verlassen es dabei nicht.</p>
+            <p>Zugangsdaten wie Tokens speichert die App im Schlüsselbund deines Geräts und schickt sie ausschließlich an die Adresse, die du eingetragen hast.</p>
+        </section>
+
+        <section>
+            <h2>Gespeichert auf deinem Gerät</h2>
+            <p>Einstellungen, Zugangsdaten und zwischengespeicherte Inhalte liegen lokal in der jeweiligen App. Zugangsdaten werden im Schlüsselbund gespeichert und nicht mit iCloud synchronisiert.</p>
         </section>
 
         <section>
@@ -178,19 +203,20 @@
 
         <section>
             <h2>Daten löschen</h2>
-            <p>Wenn du eine App löschst, werden die darin gespeicherten Daten von deinem Gerät entfernt. Kopien, die du selbst exportiert hast, bleiben erhalten.</p>
+            <p>Wenn du eine App löschst, entfernt iOS die darin gespeicherten Daten von deinem Gerät. Kopien, die du selbst exportiert hast, bleiben erhalten. Deine Daten in Apple Health, Kalender und Erinnerungen gehören dir und bleiben in den jeweiligen Apps von Apple.</p>
+            <p>Einträge im Schlüsselbund (z.&nbsp;B. gespeicherte Zugangsdaten) kann iOS nach dem Löschen einer App behalten. Entferne sie deshalb vorher in der App oder widerrufe sie beim jeweiligen Dienst.</p>
         </section>
 
         <section>
             <h2>Deine Rechte</h2>
-            <p>Da ich keine personenbezogenen Daten von dir erhalte oder speichere, kann ich dazu auch keine Auskunft geben. Unabhängig davon hast du nach der DSGVO das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch sowie das Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.</p>
+            <p>Da ich keine personenbezogenen Daten von dir erhalte oder speichere, kann ich dazu auch keine Auskunft geben. Unabhängig davon hast du nach der DSGVO das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch sowie das Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Gegenüber Online-Diensten Dritter und Apple machst du diese Rechte beim jeweiligen Anbieter geltend.</p>
             <p>Bei Fragen zum Datenschutz: <a href="mailto:mail@andyscloud.de">mail@andyscloud.de</a></p>
         </section>
 
     </main>
 
     <footer>
-        <a href="support.html">Support</a>
+        <a href="support.html">Support</a> · <a href="privacy-en.html">English</a>
     </footer>
 </body>
 </html>

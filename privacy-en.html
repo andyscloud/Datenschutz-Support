@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="theme-color" content="#05061a">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Privacy Policy</title>
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            min-height: 100svh;
+            background: #05061a;
+            color: rgba(255, 255, 255, 0.88);
+            font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* Aurora: blurred, slowly drifting color veils (same as the start page) */
+        .aurora {
+            position: fixed;
+            inset: -25%;
+            filter: blur(70px) saturate(130%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .veil {
+            position: absolute;
+            border-radius: 50%;
+            mix-blend-mode: screen;
+            opacity: 0.9;
+            animation: drift 22s ease-in-out infinite alternate;
+        }
+
+        .veil.green  { width: 70vmax; height: 34vmax; left: 5%;  top: 18%; background: radial-gradient(closest-side, #2ef2b5, transparent); transform: rotate(-18deg); }
+        .veil.cyan   { width: 60vmax; height: 30vmax; left: 35%; top: 8%;  background: radial-gradient(closest-side, #3fb8ff, transparent); animation-duration: 26s; animation-delay: -6s; }
+        .veil.violet { width: 75vmax; height: 40vmax; left: 20%; top: 45%; background: radial-gradient(closest-side, #7b4dff, transparent); animation-duration: 30s; animation-delay: -12s; }
+        .veil.pink   { width: 45vmax; height: 26vmax; left: 55%; top: 55%; background: radial-gradient(closest-side, #ff5ca8, transparent); opacity: 0.45; animation-duration: 34s; animation-delay: -3s; }
+
+        @keyframes drift {
+            0%   { transform: translate(0, 0) rotate(-12deg) scale(1); }
+            50%  { transform: translate(6vmax, -4vmax) rotate(4deg) scale(1.12); }
+            100% { transform: translate(-5vmax, 3vmax) rotate(-20deg) scale(0.95); }
+        }
+
+        .stars {
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+            opacity: 0.5;
+            pointer-events: none;
+            background-image:
+                radial-gradient(1px 1px at 12% 22%, #fff, transparent),
+                radial-gradient(1px 1px at 78% 14%, #fff, transparent),
+                radial-gradient(1.5px 1.5px at 64% 72%, #fff, transparent),
+                radial-gradient(1px 1px at 28% 84%, #fff, transparent),
+                radial-gradient(1px 1px at 90% 58%, #fff, transparent),
+                radial-gradient(1.5px 1.5px at 42% 9%, #fff, transparent),
+                radial-gradient(1px 1px at 6% 62%, #fff, transparent),
+                radial-gradient(1px 1px at 52% 44%, #fff, transparent);
+        }
+
+        header, main, footer {
+            position: relative;
+            z-index: 2;
+        }
+
+        header {
+            text-align: center;
+            padding: 64px 20px 8px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: clamp(30px, 7vw, 44px);
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            line-height: 1.15;
+            background: linear-gradient(180deg, #ffffff 30%, #c9c2ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        header p { margin: 10px 0 0; color: rgba(255, 255, 255, 0.6); }
+        header p:empty { display: none; }
+
+        main {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 28px 20px 32px;
+        }
+
+        /* Glass cards */
+        section {
+            padding: 6px 24px 20px;
+            margin-bottom: 18px;
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            -webkit-backdrop-filter: blur(24px) saturate(150%);
+            backdrop-filter: blur(24px) saturate(150%);
+        }
+
+        h2, h3, strong { color: #fff; }
+        h2 { font-size: 22px; margin: 22px 0 6px; letter-spacing: -0.01em; }
+        h3 { font-size: 18px; margin: 20px 0 4px; }
+        main > h2 { margin: 34px 4px 14px; }
+        p, ul { margin: 8px 0; }
+        ul { padding-left: 22px; }
+        li { margin: 4px 0; }
+
+        a { color: #c9c2ff; text-underline-offset: 3px; }
+        a:hover { color: #fff; }
+
+        .lead { font-size: 18px; color: #fff; }
+        .muted { color: rgba(255, 255, 255, 0.55); font-size: 15px; }
+        .faq h3 { margin-top: 18px; }
+        .faq p { margin-top: 2px; }
+
+        footer {
+            text-align: center;
+            font-size: 14px;
+            padding: 0 20px 48px;
+        }
+
+        footer a { color: rgba(255, 255, 255, 0.55); }
+
+        @media (prefers-reduced-motion: reduce) {
+            .veil { animation: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="aurora" aria-hidden="true">
+        <div class="veil green"></div>
+        <div class="veil cyan"></div>
+        <div class="veil violet"></div>
+        <div class="veil pink"></div>
+    </div>
+    <div class="stars" aria-hidden="true"></div>
+    <header>
+        <h1>Privacy Policy</h1>
+        <p>Last updated: November 2026</p>
+    </header>
+
+    <main>
+        <section>
+            <p class="lead">My apps don’t collect data about you. There are no user accounts, no ads, no tracking and no analytics services. I don’t run any servers of my own and have no access to your data. What you enter in an app, or what it reads on your device, stays on your device – unless an app explicitly fetches data from an online service (see “Online services”) or you share it yourself, for example through an export.</p>
+        </section>
+
+        <section>
+            <h2>Permissions</h2>
+            <p>Some apps ask for permissions. They are only used for the feature described. You can revoke them at any time in iOS Settings.</p>
+            <ul>
+                <li><strong>Photos:</strong> The app only receives the photos you choose yourself.</li>
+                <li><strong>Face&nbsp;ID / Touch&nbsp;ID:</strong> iOS performs the check. The app only learns whether it succeeded. The app never receives biometric data.</li>
+                <li><strong>Location:</strong> If an app needs your location (for example for the weather), it only requests it while you are using the app.</li>
+                <li><strong>Health, Calendar and Reminders:</strong> see the following sections.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Apple Health</h2>
+            <p>Apps that use data from Apple Health (for example sleep, steps or heart rate) only read the categories you allow in the Health prompt. The data is processed on your device and only shown in the app.</p>
+            <p>I don’t use health data for advertising, marketing or data mining, and I don’t share it with data brokers or other third parties. The only exception is features that you explicitly turn on yourself (see “Your own servers and AI”).</p>
+            <p>You can change the permissions at any time under Settings → Apps → Health → Data Access &amp; Devices. Health data shown in an app is not a medical statement or diagnosis and is not a substitute for medical advice.</p>
+        </section>
+
+        <section>
+            <h2>Calendar and Reminders</h2>
+            <p>Apps that show events or reminders only read them with your permission and only to display them in the app. They are neither stored nor sent anywhere.</p>
+        </section>
+
+        <section>
+            <h2>Online services</h2>
+            <p>Some apps load content from online services, for example weather, news or radio stations. In doing so, the respective provider sees technically necessary connection data such as your IP address – as with any visit to a website. If a feature needs your location (for example the weather), its coordinates are sent to the respective service.</p>
+            <p>Which services an app uses is stated in the app’s description on the App Store and in the app itself (for example under “Data Sources” in Settings). The privacy policies of these providers apply to them. I receive no data from them.</p>
+        </section>
+
+        <section>
+            <h2>Your own servers and AI</h2>
+            <p>Some features you can turn on voluntarily send data to a server that you run yourself (for example your Home Assistant). This only happens if you turn the feature on and enter the address yourself. If your server passes the data on to an AI provider, that provider’s privacy terms apply. I receive none of it.</p>
+            <p>Features using Apple Intelligence run directly on your device. The data doesn’t leave it.</p>
+            <p>The app stores credentials such as tokens in your device’s Keychain and sends them only to the address you entered.</p>
+        </section>
+
+        <section>
+            <h2>Stored on your device</h2>
+            <p>Settings, credentials and cached content are stored locally in the respective app. Credentials are kept in the Keychain and are not synced with iCloud.</p>
+        </section>
+
+        <section>
+            <h2>Apple services</h2>
+            <p>If you use iCloud (for example iCloud Backup, iCloud&nbsp;Drive or iCloud Keychain), app data may be stored there. <a href="https://www.apple.com/legal/privacy/">Apple’s privacy policy</a> applies to that.</p>
+            <p>When you download an app from the App Store, Apple processes data according to its own policy. If you have agreed in iOS Settings to share analytics with app developers, Apple may provide me with anonymous crash and usage reports. They don’t allow any conclusions about you as a person.</p>
+        </section>
+
+        <section>
+            <h2>Deleting data</h2>
+            <p>When you delete an app, iOS removes the data stored in it from your device. Copies you exported yourself remain. Your data in Apple Health, Calendar and Reminders belongs to you and stays in Apple’s respective apps.</p>
+            <p>iOS may keep Keychain items (for example saved credentials) after an app is deleted. So remove them in the app first, or revoke them with the respective service.</p>
+        </section>
+
+        <section>
+            <h2>Your rights</h2>
+            <p>Since I don’t receive or store any personal data about you, I can’t provide information about it. Regardless, under the GDPR you have the right of access, rectification, erasure, restriction of processing, data portability and objection, as well as the right to lodge a complaint with a data protection authority. For online services of third parties and Apple, you exercise these rights with the respective provider.</p>
+            <p>Questions about privacy: <a href="mailto:mail@andyscloud.de">mail@andyscloud.de</a></p>
+        </section>
+
+    </main>
+
+    <footer>
+        <a href="support-en.html">Support</a> · <a href="datenschutz.html">Deutsch</a>
+    </footer>
+</body>
+</html>
